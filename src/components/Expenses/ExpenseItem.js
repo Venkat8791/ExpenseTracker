@@ -4,9 +4,7 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
-
 function ExpenseItem(props) {
-
   //must be called directly under the function.
   //return value and a modifying function.
   //first value is current state value
@@ -16,17 +14,18 @@ function ExpenseItem(props) {
   // const clickHandler = () => {
   //   setTitle("updated");
   // }
- 
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-      {/* <button onClick={clickHandler}>Change Title</button> */}
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+        {/* <button onClick={clickHandler}>Change Title</button> */}
+      </Card>
+    </li>
   );
 }
 export default ExpenseItem;
